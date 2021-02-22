@@ -26,6 +26,7 @@ const store = createStore(rootReducer);
 const Tab = createBottomTabNavigator();
 const ListStack = createStackNavigator();
 const HomeStack = createStackNavigator();
+const ActionStack = createStackNavigator();
 
 const HomeStackScreen = () => {
   return (
@@ -40,6 +41,15 @@ const ListStackScreen = () => {
   return (
     <ListStack.Navigator>
       <ListStack.Screen name="List" component={List} options={{title:"List", headerTitleAlign:"center"}} />
+      <ListStack.Screen name="Details" component={Details} options={{title:"Details", headerTitleAlign:"center"}}  />
+    </ListStack.Navigator>
+  )
+}
+
+const ActionStackScreen = () => {
+  return (
+    <ListStack.Navigator>
+      <ListStack.Screen name="Actions" component={Actions} options={{title:"Actions", headerTitleAlign:"center"}} />
       <ListStack.Screen name="Details" component={Details} options={{title:"Details", headerTitleAlign:"center"}}  />
     </ListStack.Navigator>
   )
@@ -85,7 +95,7 @@ export default function App() {
          <Tab.Navigator tabBarOptions={tabBarOptions} screenOptions={screeOptions}>
             <Tab.Screen name="Home" component={HomeStackScreen} />
             <Tab.Screen name="List" component={ListStackScreen} />
-            <Tab.Screen name="Actions" component={Actions} />
+            <Tab.Screen name="Actions" component={ActionStackScreen} />
           </Tab.Navigator>
         </NavigationContainer>
      </SafeAreaProvider>

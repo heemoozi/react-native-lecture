@@ -5,7 +5,7 @@ export const addAction = payload => ({
   payload
 })
 
-export const addAction = payload => ({
+export const removeAction = payload => ({
   type: 'REMOVE_ACTION',
   payload
 })
